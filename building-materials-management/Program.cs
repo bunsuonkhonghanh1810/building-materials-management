@@ -4,6 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using building_materials_management.Login;
+using building_materials_management.Classes;
+
 namespace building_materials_management
 {
     internal static class Program
@@ -12,11 +15,22 @@ namespace building_materials_management
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        static async Task Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            try
+            {
+                await SupabaseService.InitializeAsync();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Không thể kết nối Supabase: {ex.Message}", "Lỗi kết nối");
+                return;
+            }
+
+            Application.Run(new frmLogin());
         }
     }
 }
