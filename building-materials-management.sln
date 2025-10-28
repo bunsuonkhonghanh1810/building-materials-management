@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36408.4 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "building-materials-management", "building-materials-management\building-materials-management.csproj", "{079A23A1-76B3-44FF-BBB4-72D8A2436B3C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{079A23A1-76B3-44FF-BBB4-72D8A2436B3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{079A23A1-76B3-44FF-BBB4-72D8A2436B3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{079A23A1-76B3-44FF-BBB4-72D8A2436B3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{079A23A1-76B3-44FF-BBB4-72D8A2436B3C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {30DC75C4-C60F-4087-BC76-CB339F870D21}
+	EndGlobalSection
+EndGlobal
