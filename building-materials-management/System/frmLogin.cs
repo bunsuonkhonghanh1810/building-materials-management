@@ -16,6 +16,15 @@ namespace building_materials_management.Login
         public frmLogin()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.CenterToScreen();
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            this.txtPassword.PasswordChar = '*';
         }
 
         private async void btnLogin_Click(object sender, EventArgs e)
@@ -37,15 +46,14 @@ namespace building_materials_management.Login
 
                 if (session != null && session.User != null)
                 {
-                    // Debug: Lấy tất cả user rồi lọc bằng C#
                     var response = await client.From<User>().Get();
                     var allUsers = response.Models;
                     var profile = allUsers.FirstOrDefault(u => u.Id == Guid.Parse(session.User.Id));
 
                     if (profile != null)
                     {
-                        // GlobalState.CurrentUserRole = profile.Role;
-                        // GlobalState.CurrentUserName = profile.HoTen;
+                        GlobalState.CurrentUserRole = profile.Role;
+                        GlobalState.CurrentUserName = profile.HoTen;
 
                         MessageBox.Show($"Đăng nhập thành công! Chào mừng {profile.HoTen}.");
 
@@ -66,5 +74,7 @@ namespace building_materials_management.Login
                 MessageBox.Show("Lỗi đăng nhập: " + ex.Message);
             }
         }
+
+        
     }
 }
