@@ -1,4 +1,5 @@
-﻿using System;
+﻿using building_materials_management.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,44 @@ namespace building_materials_management.Main
         public frmMain()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.ControlBox = false;
+            this.CenterToScreen();
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            lblWelcome.Text = $"Chào, {GlobalState.CurrentUserName}";
+
+            menuMasterData.Visible = false;
+            menuOperation.Visible = false;
+            menuReport.Visible = false;
+
+            if (GlobalState.CurrentUserRole == "admin")
+            {
+                menuMasterData.Visible = true;
+                menuOperation.Visible = true;
+                menuReport.Visible = true;
+            }
+            else if (GlobalState.CurrentUserRole == "quan_ly")
+            {
+                menuMasterData.Visible = true;
+                menuUserManagement.Visible = false;
+                menuOperation.Visible = true;
+                menuReport.Visible = true;
+            }
+            else if (GlobalState.CurrentUserRole == "nhan_vien")
+            {
+                menuMasterData.Visible = true;
+                menuUserManagement.Visible = false;
+                menuCategoryManagement.Visible = false;
+                menuOperation.Visible = true;
+            }
+        }
+
+        private void menuClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

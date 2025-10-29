@@ -1,4 +1,5 @@
 ﻿using building_materials_management.Classes;
+using building_materials_management.Main;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -57,11 +58,9 @@ namespace building_materials_management.Login
 
                         MessageBox.Show($"Đăng nhập thành công! Chào mừng {profile.HoTen}.");
 
-                        //// Ẩn form Login và mở form Main
-                        //this.Hide();
-                        //var frmMain = new frmMain(); // (Đây là form Dashboard của bạn)
-                        //frmMain.ShowDialog();
-                        //this.Close(); // Đóng form Login sau khi form Main tắt
+                        this.Hide();
+                        frmMain formMain = new frmMain(); // (Đây là form Dashboard của bạn)
+                        formMain.Show();
                     }
                     else
                     {
