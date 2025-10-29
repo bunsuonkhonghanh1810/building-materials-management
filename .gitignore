@@ -1,1 +1,38 @@
+<<<<<<< HEAD
 .vs/
+=======
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build folders
+bin/
+obj/
+[Bb]uild/
+[Ll]og/
+*.log
+
+# VS Code
+.vscode/
+.vscode/*
+
+# Temporary files
+*.tmp
+*.temp
+*.cache
+
+# User-specific files
+*.dbmdl
+*.pdb
+*.opendb
+
+# Publish output
+publish/
+out/
+
+# Config (optional)
+appsettings.Development.json
+>>>>>>> wang
