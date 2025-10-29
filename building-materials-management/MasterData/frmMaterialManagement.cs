@@ -1,4 +1,5 @@
-﻿using System;
+﻿using building_materials_management.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,16 @@ namespace building_materials_management.MasterData
         public frmMaterialManagement()
         {
             InitializeComponent();
+        }
+
+        private void frmMaterialManagement_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void OInit()
+        {
+            var client = SupabaseService.Client;
+            var materials = client.From<Material>().Get().Result.Models;
         }
     }
 }

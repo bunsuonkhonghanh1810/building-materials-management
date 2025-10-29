@@ -127,8 +127,13 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Category.cs" />
     <Compile Include="Classes\GlobalState.cs" />
+    <Compile Include="Classes\Material.cs" />
+    <Compile Include="Classes\Receipt.cs" />
+    <Compile Include="Classes\ReceiptDetails.cs" />
     <Compile Include="Classes\SupabaseService.cs" />
+    <Compile Include="Classes\Supplier.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="MasterData\frmCategoryManagement.cs">
       <SubType>Form</SubType>
@@ -186,6 +191,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MasterData\frmMaterialManagement.resx">
+      <DependentUpon>frmMaterialManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterData\frmUserManagement.resx">
+      <DependentUpon>frmUserManagement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="System\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
