@@ -186,6 +186,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MasterData\frmCategoryManagement.resx">
+      <DependentUpon>frmCategoryManagement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="System\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
