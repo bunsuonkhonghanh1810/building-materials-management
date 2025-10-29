@@ -13,13 +13,10 @@ namespace building_materials_management.Classes
     {
         [PrimaryKey("id", false)]
         public Guid Id { get; set; }
-
         [Column("ho_ten")]
         public string HoTen { get; set; }
-
         [Column("email")]
         public string Email { get; set; }
-
         [Column("role")]
         public string Role { get; set; }
     }
