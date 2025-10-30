@@ -1,11 +1,11 @@
-﻿using System;
+﻿using building_materials_management.Classes;
+using building_materials_management.Login;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
-using building_materials_management.Login;
-using building_materials_management.Classes;
 
 namespace building_materials_management
 {
@@ -15,14 +15,14 @@ namespace building_materials_management
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static async Task Main()
+        static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
             try
             {
-                await SupabaseService.InitializeAsync();
+                SupabaseService.InitializeAsync().GetAwaiter().GetResult();
             }
             catch (Exception ex)
             {

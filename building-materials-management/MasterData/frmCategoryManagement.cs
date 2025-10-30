@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using building_materials_management.Classes;
 using Postgrest;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace building_materials_management.MasterData
 {
@@ -183,7 +184,7 @@ namespace building_materials_management.MasterData
                 {
                     var newCategory = new Category
                     {
-                        Id = txtMaDM.Text.Trim() != "" ? long.Parse(txtMaDM.Text.Trim().Substring(2)) : 0,
+                        Id = string.IsNullOrWhiteSpace(txtMaDM.Text) ? 0 : long.Parse(txtMaDM.Text.Trim()),
                         TenDanhMuc = txtTenDanhMuc.Text.Trim(),
                         MoTa = txtMoTa.Text.Trim(),
                         CreatedAt = DateTime.Now
@@ -303,11 +304,13 @@ namespace building_materials_management.MasterData
                     .Select("*")
                     .Get();
 
-                // Đếm tổng số danh mục + 1
-                int sequence = categories.Models.Count + 1;
-                string code = $"DM{sequence:D3}";
+                long maxId = categories.Models.Count > 0
+                    ? categories.Models.Max(c => c.Id)
+                    : 0;
 
-                return code;
+                long newId = maxId + 1;
+
+                return newId.ToString();
             }
             catch (Exception ex)
             {
@@ -350,7 +353,49 @@ namespace building_materials_management.MasterData
 
         private void btnExcel_Click(object sender, EventArgs e)
         {
-            
+            Excel.Application exApp = new Excel.Application();
+            Excel.Workbook exMaterials = exApp.Workbooks.Add(Excel.XlWBATemplate.xlWBATWorksheet);
+            Excel.Worksheet exSheet = (Excel.Worksheet)exMaterials.Worksheets[1];
+            Excel.Range tenTruong = (Excel.Range)exSheet.Cells[1, 1]; 
+
+            tenTruong.Range["B2"].Font.Size = 25;
+            tenTruong.Range["B2"].Font.Name = "Times New Roman";
+            tenTruong.Range["B2"].Font.Color = Color.Red;
+            tenTruong.Range["B2"].Value = "DANH SÁCH DANH MỤC VẬT TƯ";
+
+            tenTruong.Range["A4:F4"].Font.Size = 13;
+            tenTruong.Range["A4:F4"].Font.Name = "Times New Roman";
+            //tenTruong.Range["B2"].Font.Color = Color.Black;
+            tenTruong.Range["A4:F4"].Font.Bold = true;
+            tenTruong.Range["A4"].Value = "Mã danh mục vật tư";
+            tenTruong.Range["B4"].Value = "Tên danh mục";
+            tenTruong.Range["C4"].Value = "Mô tả";
+
+            int hang = 5;
+            for (int i = 0; i < dgvDanhMuc.Rows.Count - 1; i++)
+            {
+                tenTruong.Range["A" + hang.ToString()].Value = dgvDanhMuc.Rows[i].Cells[0].Value.ToString();
+                tenTruong.Range["B" + hang.ToString()].Value = dgvDanhMuc.Rows[i].Cells[1].Value.ToString();
+                tenTruong.Range["C" + hang.ToString()].Value = dgvDanhMuc.Rows[i].Cells[2].Value.ToString();
+                hang++;
+            }
+            exSheet.Name = "Danh sách danh mục vật tư";
+
+            exMaterials.Activate();
+
+            SaveFileDialog dlFile = new SaveFileDialog();
+            if (dlFile.ShowDialog() == DialogResult.OK)
+            {
+                exMaterials.SaveAs(dlFile.FileName.ToString());
+            }
+
+            exApp.Quit();
+
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
