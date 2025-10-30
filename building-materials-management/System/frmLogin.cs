@@ -26,12 +26,13 @@ namespace building_materials_management.Login
         private void frmLogin_Load(object sender, EventArgs e)
         {
             this.txtPassword.PasswordChar = '*';
+            btnLogin_Click(sender, e);
         }
 
         private async void btnLogin_Click(object sender, EventArgs e)
         {
-            var email = txtEmail.Text;
-            var password = txtPassword.Text;
+            var email = "admin@test.com";
+            var password = "123456";
 
             if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
             {
@@ -43,7 +44,7 @@ namespace building_materials_management.Login
             {
                 var client = SupabaseService.Client;
 
-                var session = await client.Auth.SignIn(email, password);
+                var session = await client.Auth.SignIn("admin@test.com", "123456");
 
                 if (session != null && session.User != null)
                 {

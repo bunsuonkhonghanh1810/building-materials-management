@@ -1,4 +1,5 @@
 ﻿using building_materials_management.Classes;
+using building_materials_management.MasterData;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -54,6 +55,12 @@ namespace building_materials_management.Main
         private void menuClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void menuCategoryManagement_Click(object sender, EventArgs e)
+        {
+            frmCategoryManagement frm = new frmCategoryManagement();
+            frm.ShowDialog();
         }
     }
 }
