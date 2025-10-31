@@ -13,14 +13,13 @@ namespace building_materials_management.Classes
     {
         [PrimaryKey("id", true)]
         public long Id { get; set; }
-
         [Column("ten_danh_muc")]
         public string TenDanhMuc { get; set; }
-
         [Column("mo_ta")]
         public string MoTa { get; set; }
-
         [Column("created_at")]
         public DateTime CreatedAt { get; set; } = DateTime.Now;
+        [Column("is_deleted")]
+        public bool IsDeleted { get; set; } = false;
     }
 }

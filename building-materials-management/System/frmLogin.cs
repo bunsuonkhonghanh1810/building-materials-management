@@ -26,12 +26,13 @@ namespace building_materials_management.Login
         private void frmLogin_Load(object sender, EventArgs e)
         {
             this.txtPassword.PasswordChar = '*';
+            btnLogin_Click(sender, e);
         }
 
         private async void btnLogin_Click(object sender, EventArgs e)
         {
-            var email = txtEmail.Text;
-            var password = txtPassword.Text;
+            var email = "admin@test.com";
+            var password = "123456";
 
             if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
             {

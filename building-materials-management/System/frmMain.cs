@@ -1,4 +1,5 @@
 ﻿using building_materials_management.Classes;
+using building_materials_management.MasterData;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +20,8 @@ namespace building_materials_management.Main
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.ControlBox = false;
             this.CenterToScreen();
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
         }
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -54,6 +57,16 @@ namespace building_materials_management.Main
         private void menuClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void menuSupplierManagement_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            frmSupplierManagement formSupplierManagement = new frmSupplierManagement();
+            formSupplierManagement.ShowDialog();
+
+            this.Show();
         }
     }
 }

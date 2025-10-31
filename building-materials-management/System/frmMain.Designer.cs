@@ -39,8 +39,8 @@
             this.menuReport = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStatisticsReport = new System.Windows.Forms.ToolStripMenuItem();
             this.menuPrintReceipt = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblWelcome = new System.Windows.Forms.Label();
             this.menuClose = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblWelcome = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,6 +73,7 @@
             this.menuSupplierManagement.Name = "menuSupplierManagement";
             this.menuSupplierManagement.Size = new System.Drawing.Size(180, 22);
             this.menuSupplierManagement.Text = "Nhà cung cấp";
+            this.menuSupplierManagement.Click += new System.EventHandler(this.menuSupplierManagement_Click);
             // 
             // menuCategoryManagement
             // 
@@ -103,7 +104,7 @@
             // menuStockReceipt
             // 
             this.menuStockReceipt.Name = "menuStockReceipt";
-            this.menuStockReceipt.Size = new System.Drawing.Size(180, 22);
+            this.menuStockReceipt.Size = new System.Drawing.Size(157, 22);
             this.menuStockReceipt.Text = "Phiếu nhập kho";
             // 
             // menuReport
@@ -118,14 +119,21 @@
             // menuStatisticsReport
             // 
             this.menuStatisticsReport.Name = "menuStatisticsReport";
-            this.menuStatisticsReport.Size = new System.Drawing.Size(180, 22);
+            this.menuStatisticsReport.Size = new System.Drawing.Size(166, 22);
             this.menuStatisticsReport.Text = "Báo cáo thống kê";
             // 
             // menuPrintReceipt
             // 
             this.menuPrintReceipt.Name = "menuPrintReceipt";
-            this.menuPrintReceipt.Size = new System.Drawing.Size(180, 22);
+            this.menuPrintReceipt.Size = new System.Drawing.Size(166, 22);
             this.menuPrintReceipt.Text = "In hóa đơn ";
+            // 
+            // menuClose
+            // 
+            this.menuClose.Name = "menuClose";
+            this.menuClose.Size = new System.Drawing.Size(50, 20);
+            this.menuClose.Text = "Thoát";
+            this.menuClose.Click += new System.EventHandler(this.menuClose_Click);
             // 
             // lblWelcome
             // 
@@ -135,13 +143,6 @@
             this.lblWelcome.Size = new System.Drawing.Size(52, 13);
             this.lblWelcome.TabIndex = 1;
             this.lblWelcome.Text = "Welcome";
-            // 
-            // menuClose
-            // 
-            this.menuClose.Name = "menuClose";
-            this.menuClose.Size = new System.Drawing.Size(50, 20);
-            this.menuClose.Text = "Thoát";
-            this.menuClose.Click += new System.EventHandler(this.menuClose_Click);
             // 
             // frmMain
             // 
