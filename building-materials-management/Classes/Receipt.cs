@@ -28,6 +28,8 @@ namespace building_materials_management.Classes
         [Column("ghi_chu")]
         public string GhiChu { get; set; }
         [Column("created_at")]
-        public DateTime CreatedAt { get; set; } = DateTime.Now; 
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
+        [Column("is_deleted")]
+        public bool IsDeleted { get; set; } = false;
     }
 }

@@ -10,16 +10,12 @@ namespace building_materials_management.Classes
     {
         [PrimaryKey("id", false)]
         public long Id { get; set; }
-
         [Column("ma_vat_tu")]
         public string MaVatTu { get; set; }
-
         [Column("ten_vat_tu")]
         public string TenVatTu { get; set; }
-
         [Column("don_vi_tinh")]
         public string DonViTinh { get; set; }
-
         [Column("ton_kho")]
         public int TonKho { get; set; }
 
@@ -36,5 +32,6 @@ namespace building_materials_management.Classes
         [Reference(typeof(Category), foreignKey: "id_danh_muc")]
         [JsonProperty("danhmucvattu")]   // tên bảng join trong query
         public Category Categories { get; set; }
+
     }
 }

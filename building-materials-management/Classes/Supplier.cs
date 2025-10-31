@@ -11,7 +11,7 @@ namespace building_materials_management.Classes
     [Table("nhacungcap")]
     public  class Supplier : BaseModel
     {
-        [PrimaryKey("id", true)]
+        [PrimaryKey("id", false)]
         public int Id { get; set; }
         [Column("ten_ncc")]
         public string TenNCC { get; set; }
@@ -23,6 +23,8 @@ namespace building_materials_management.Classes
         public string Email { get; set; }
         [Column("ma_so_thue")]
         public string MaSoThue { get; set; }
+        [Column("is_deleted")]
+        public bool IsDeleted { get; set; } = false;
         [Column("created_at")]
         public DateTime CreatedAt { get; set; } = DateTime.Now;
     }
