@@ -41,7 +41,6 @@
             this.menuPrintReceipt = new System.Windows.Forms.ToolStripMenuItem();
             this.menuClose = new System.Windows.Forms.ToolStripMenuItem();
             this.lblWelcome = new System.Windows.Forms.Label();
-            this.lblWelcome = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
