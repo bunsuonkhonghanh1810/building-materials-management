@@ -32,6 +32,7 @@ namespace building_materials_management.Login
         {
             var email = txtEmail.Text;
             var password = txtPassword.Text;
+          
 
             if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
             {

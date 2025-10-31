@@ -15,14 +15,14 @@ namespace building_materials_management
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static async Task Main()
+        static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
             try
             {
-                await SupabaseService.InitializeAsync();
+                SupabaseService.InitializeAsync().GetAwaiter().GetResult();
             }
             catch (Exception ex)
             {
