@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-.vs/
-=======
 # Visual Studio
 .vs/
 *.suo
@@ -11,7 +8,6 @@
 # Build folders
 bin/
 obj/
-[Bb]uild/
 [Ll]og/
 *.log
 
@@ -35,4 +31,3 @@ out/
 
 # Config (optional)
 appsettings.Development.json
->>>>>>> wang
