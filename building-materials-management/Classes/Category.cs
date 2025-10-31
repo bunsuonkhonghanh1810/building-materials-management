@@ -11,7 +11,7 @@ namespace building_materials_management.Classes
     [Table("danhmucvattu")]
     public class Category : BaseModel
     {
-        [PrimaryKey("id", true)]
+        [PrimaryKey("id", false)]
         public long Id { get; set; }
         [Column("ten_danh_muc")]
         public string TenDanhMuc { get; set; }

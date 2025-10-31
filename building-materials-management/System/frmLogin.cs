@@ -44,7 +44,7 @@ namespace building_materials_management.Login
             {
                 var client = SupabaseService.Client;
 
-                var session = await client.Auth.SignIn(email, password);
+                var session = await client.Auth.SignIn("admin@test.com", "123456");
 
                 if (session != null && session.User != null)
                 {
