@@ -59,6 +59,11 @@ namespace building_materials_management.Main
             Application.Exit();
         }
 
+        private void menuMaterialManagement_Click(object sender, EventArgs e)
+        {
+            Form frmMater = new MasterData.frmMaterialManagement();
+            frmMater.ShowDialog();
+        }
         private void menuSupplierManagement_Click(object sender, EventArgs e)
         {
             this.Hide();
