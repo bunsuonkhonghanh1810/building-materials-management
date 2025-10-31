@@ -11,6 +11,5 @@ namespace building_materials_management.Classes
         public static Guid CurrentUserId { get; set; }
         public static string CurrentUserName { get; set; }
         public static string CurrentUserRole { get; set; }
-        public static Guid CurrentUserId { get; set; }
     }
 }
