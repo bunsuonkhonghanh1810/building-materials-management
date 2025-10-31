@@ -67,6 +67,7 @@ namespace building_materials_management.Main
             formSupplierManagement.ShowDialog();
 
             this.Show();
+        }
         private void menuCategoryManagement_Click(object sender, EventArgs e)
         {
             frmCategoryManagement frm = new frmCategoryManagement();

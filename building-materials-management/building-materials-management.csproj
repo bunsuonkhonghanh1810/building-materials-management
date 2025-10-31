@@ -219,6 +219,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MasterData\frmSupplierManagement.resx">
       <DependentUpon>frmSupplierManagement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MasterData\frmCategoryManagement.resx">
       <DependentUpon>frmCategoryManagement.cs</DependentUpon>
     </EmbeddedResource>
