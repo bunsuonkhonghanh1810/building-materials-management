@@ -78,5 +78,15 @@ namespace building_materials_management.Main
             frmCategoryManagement frm = new frmCategoryManagement();
             frm.ShowDialog();
         }
+
+        private void menuUserManagement_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            frmUserManagement formUserManagement = new frmUserManagement();
+            formUserManagement.ShowDialog();
+
+            this.Show();
+        }
     }
 }

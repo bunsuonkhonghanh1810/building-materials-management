@@ -28,190 +28,165 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblemail = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblrole = new System.Windows.Forms.Label();
-            this.cbbrole = new System.Windows.Forms.ComboBox();
-            this.txtemail = new System.Windows.Forms.TextBox();
-            this.txtpassword = new System.Windows.Forms.TextBox();
-            this.txthoten = new System.Windows.Forms.TextBox();
-            this.lblhoten = new System.Windows.Forms.Label();
-            this.dgv = new System.Windows.Forms.DataGridView();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnThoat = new System.Windows.Forms.Button();
-            this.btnBoQua = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.btnLuu = new System.Windows.Forms.Button();
-            this.btnThemMoi = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.lblRole = new System.Windows.Forms.Label();
+            this.cbbRole = new System.Windows.Forms.ComboBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.lblName = new System.Windows.Forms.Label();
+            this.dgvUsers = new System.Windows.Forms.DataGridView();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblemail
+            // lblEmail
             // 
-            this.lblemail.AutoSize = true;
-            this.lblemail.Location = new System.Drawing.Point(69, 32);
-            this.lblemail.Name = "lblemail";
-            this.lblemail.Size = new System.Drawing.Size(41, 16);
-            this.lblemail.TabIndex = 0;
-            this.lblemail.Text = "Email";
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(31, 34);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(35, 13);
+            this.lblEmail.TabIndex = 0;
+            this.lblEmail.Text = "Email:";
             // 
-            // label2
+            // lblPassword
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(69, 72);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Password";
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Location = new System.Drawing.Point(31, 67);
+            this.lblPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(56, 13);
+            this.lblPassword.TabIndex = 1;
+            this.lblPassword.Text = "Password:";
             // 
-            // lblrole
+            // lblRole
             // 
-            this.lblrole.AutoSize = true;
-            this.lblrole.Location = new System.Drawing.Point(332, 76);
-            this.lblrole.Name = "lblrole";
-            this.lblrole.Size = new System.Drawing.Size(45, 16);
-            this.lblrole.TabIndex = 2;
-            this.lblrole.Text = "Vai trò";
+            this.lblRole.AutoSize = true;
+            this.lblRole.Location = new System.Drawing.Point(306, 67);
+            this.lblRole.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblRole.Name = "lblRole";
+            this.lblRole.Size = new System.Drawing.Size(40, 13);
+            this.lblRole.TabIndex = 2;
+            this.lblRole.Text = "Vai trò:";
             // 
-            // cbbrole
+            // cbbRole
             // 
-            this.cbbrole.FormattingEnabled = true;
-            this.cbbrole.Location = new System.Drawing.Point(422, 67);
-            this.cbbrole.Name = "cbbrole";
-            this.cbbrole.Size = new System.Drawing.Size(121, 24);
-            this.cbbrole.TabIndex = 3;
+            this.cbbRole.FormattingEnabled = true;
+            this.cbbRole.Location = new System.Drawing.Point(364, 64);
+            this.cbbRole.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbRole.Name = "cbbRole";
+            this.cbbRole.Size = new System.Drawing.Size(149, 21);
+            this.cbbRole.TabIndex = 3;
             // 
-            // txtemail
+            // txtEmail
             // 
-            this.txtemail.Location = new System.Drawing.Point(159, 32);
-            this.txtemail.Name = "txtemail";
-            this.txtemail.Size = new System.Drawing.Size(100, 22);
-            this.txtemail.TabIndex = 4;
+            this.txtEmail.Location = new System.Drawing.Point(111, 31);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(149, 20);
+            this.txtEmail.TabIndex = 4;
             // 
-            // txtpassword
+            // txtPassword
             // 
-            this.txtpassword.Location = new System.Drawing.Point(159, 69);
-            this.txtpassword.Name = "txtpassword";
-            this.txtpassword.Size = new System.Drawing.Size(100, 22);
-            this.txtpassword.TabIndex = 5;
+            this.txtPassword.Location = new System.Drawing.Point(111, 64);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(149, 20);
+            this.txtPassword.TabIndex = 5;
             // 
-            // txthoten
+            // txtName
             // 
-            this.txthoten.Location = new System.Drawing.Point(422, 26);
-            this.txthoten.Name = "txthoten";
-            this.txthoten.Size = new System.Drawing.Size(121, 22);
-            this.txthoten.TabIndex = 7;
+            this.txtName.Location = new System.Drawing.Point(364, 31);
+            this.txtName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(149, 20);
+            this.txtName.TabIndex = 7;
             // 
-            // lblhoten
+            // lblName
             // 
-            this.lblhoten.AutoSize = true;
-            this.lblhoten.Location = new System.Drawing.Point(332, 26);
-            this.lblhoten.Name = "lblhoten";
-            this.lblhoten.Size = new System.Drawing.Size(46, 16);
-            this.lblhoten.TabIndex = 6;
-            this.lblhoten.Text = "Họ tên";
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(306, 34);
+            this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(42, 13);
+            this.lblName.TabIndex = 6;
+            this.lblName.Text = "Họ tên:";
             // 
-            // dgv
+            // dgvUsers
             // 
-            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(35, 130);
-            this.dgv.Name = "dgv";
-            this.dgv.RowHeadersWidth = 51;
-            this.dgv.RowTemplate.Height = 24;
-            this.dgv.Size = new System.Drawing.Size(253, 159);
-            this.dgv.TabIndex = 24;
+            this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUsers.Location = new System.Drawing.Point(34, 114);
+            this.dgvUsers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvUsers.Name = "dgvUsers";
+            this.dgvUsers.RowHeadersWidth = 51;
+            this.dgvUsers.RowTemplate.Height = 24;
+            this.dgvUsers.Size = new System.Drawing.Size(479, 150);
+            this.dgvUsers.TabIndex = 24;
             // 
-            // dataGridView1
+            // btnAdd
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(344, 130);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(266, 159);
-            this.dataGridView1.TabIndex = 25;
+            this.btnAdd.Location = new System.Drawing.Point(34, 295);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 32;
+            this.btnAdd.Text = "Thêm";
+            this.btnAdd.UseVisualStyleBackColor = true;
             // 
-            // btnThoat
+            // btnEdit
             // 
-            this.btnThoat.Location = new System.Drawing.Point(665, 254);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(77, 23);
-            this.btnThoat.TabIndex = 31;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnEdit.Location = new System.Drawing.Point(165, 295);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.TabIndex = 33;
+            this.btnEdit.Text = "Sửa";
+            this.btnEdit.UseVisualStyleBackColor = true;
             // 
-            // btnBoQua
+            // btnCancel
             // 
-            this.btnBoQua.Location = new System.Drawing.Point(665, 210);
-            this.btnBoQua.Name = "btnBoQua";
-            this.btnBoQua.Size = new System.Drawing.Size(77, 23);
-            this.btnBoQua.TabIndex = 30;
-            this.btnBoQua.Text = "Bỏ qua";
-            this.btnBoQua.UseVisualStyleBackColor = true;
+            this.btnCancel.Location = new System.Drawing.Point(300, 295);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 34;
+            this.btnCancel.Text = "Hủy";
+            this.btnCancel.UseVisualStyleBackColor = true;
             // 
-            // btnXoa
+            // btnClose
             // 
-            this.btnXoa.Location = new System.Drawing.Point(665, 168);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(77, 23);
-            this.btnXoa.TabIndex = 29;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.UseVisualStyleBackColor = true;
-            // 
-            // btnSua
-            // 
-            this.btnSua.Location = new System.Drawing.Point(665, 119);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(77, 23);
-            this.btnSua.TabIndex = 28;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = true;
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.Location = new System.Drawing.Point(665, 76);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(77, 23);
-            this.btnLuu.TabIndex = 27;
-            this.btnLuu.Text = "Lưu";
-            this.btnLuu.UseVisualStyleBackColor = true;
-            // 
-            // btnThemMoi
-            // 
-            this.btnThemMoi.Location = new System.Drawing.Point(665, 32);
-            this.btnThemMoi.Name = "btnThemMoi";
-            this.btnThemMoi.Size = new System.Drawing.Size(77, 23);
-            this.btnThemMoi.TabIndex = 26;
-            this.btnThemMoi.Text = "Thêm mới";
-            this.btnThemMoi.UseVisualStyleBackColor = true;
+            this.btnClose.Location = new System.Drawing.Point(438, 295);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.TabIndex = 35;
+            this.btnClose.Text = "Thoát";
+            this.btnClose.UseVisualStyleBackColor = true;
             // 
             // frmUserManagement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(790, 319);
-            this.Controls.Add(this.btnThoat);
-            this.Controls.Add(this.btnBoQua);
-            this.Controls.Add(this.btnXoa);
-            this.Controls.Add(this.btnSua);
-            this.Controls.Add(this.btnLuu);
-            this.Controls.Add(this.btnThemMoi);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.dgv);
-            this.Controls.Add(this.txthoten);
-            this.Controls.Add(this.lblhoten);
-            this.Controls.Add(this.txtpassword);
-            this.Controls.Add(this.txtemail);
-            this.Controls.Add(this.cbbrole);
-            this.Controls.Add(this.lblrole);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.lblemail);
+            this.ClientSize = new System.Drawing.Size(550, 344);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.dgvUsers);
+            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.lblName);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.cbbRole);
+            this.Controls.Add(this.lblRole);
+            this.Controls.Add(this.lblPassword);
+            this.Controls.Add(this.lblEmail);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmUserManagement";
             this.Text = "frmUserManagement";
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.frmUserManagement_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,21 +194,18 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblemail;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblrole;
-        private System.Windows.Forms.ComboBox cbbrole;
-        private System.Windows.Forms.TextBox txtemail;
-        private System.Windows.Forms.TextBox txtpassword;
-        private System.Windows.Forms.TextBox txthoten;
-        private System.Windows.Forms.Label lblhoten;
-        private System.Windows.Forms.DataGridView dgv;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btnThoat;
-        private System.Windows.Forms.Button btnBoQua;
-        private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.Button btnSua;
-        private System.Windows.Forms.Button btnLuu;
-        private System.Windows.Forms.Button btnThemMoi;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.Label lblRole;
+        private System.Windows.Forms.ComboBox cbbRole;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.DataGridView dgvUsers;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnClose;
     }
 }

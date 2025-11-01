@@ -66,7 +66,9 @@ namespace building_materials_management.MasterData
 
             dgvSupplier.AllowUserToResizeColumns = false;
             dgvSupplier.AllowUserToResizeRows = false;
-
+            
+            if (dgvSupplier.Columns.Contains("Id"))
+                dgvSupplier.Columns["Id"].HeaderText = "STT";
             if (dgvSupplier.Columns.Contains("TenNCC"))
                 dgvSupplier.Columns["TenNCC"].HeaderText = "Tên nhà cung cấp";
             if (dgvSupplier.Columns.Contains("DiaChi"))

@@ -46,7 +46,6 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuMasterData,
@@ -55,7 +54,8 @@
             this.menuClose});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1600, 46);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(3, 1, 0, 1);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -67,49 +67,49 @@
             this.menuMaterialManagement,
             this.menuUserManagement});
             this.menuMasterData.Name = "menuMasterData";
-            this.menuMasterData.Size = new System.Drawing.Size(144, 38);
+            this.menuMasterData.Size = new System.Drawing.Size(74, 22);
             this.menuMasterData.Text = "Danh mục";
             // 
             // menuSupplierManagement
             // 
             this.menuSupplierManagement.Name = "menuSupplierManagement";
-            this.menuSupplierManagement.Size = new System.Drawing.Size(224, 26);
+            this.menuSupplierManagement.Size = new System.Drawing.Size(180, 22);
             this.menuSupplierManagement.Text = "Nhà cung cấp";
             this.menuSupplierManagement.Click += new System.EventHandler(this.menuSupplierManagement_Click);
             // 
             // menuCategoryManagement
             // 
             this.menuCategoryManagement.Name = "menuCategoryManagement";
-            this.menuCategoryManagement.Size = new System.Drawing.Size(224, 26);
+            this.menuCategoryManagement.Size = new System.Drawing.Size(180, 22);
             this.menuCategoryManagement.Text = "Danh mục vật tư";
             this.menuCategoryManagement.Click += new System.EventHandler(this.menuCategoryManagement_Click);
             // 
             // menuMaterialManagement
             // 
             this.menuMaterialManagement.Name = "menuMaterialManagement";
-            this.menuMaterialManagement.Size = new System.Drawing.Size(359, 44);
+            this.menuMaterialManagement.Size = new System.Drawing.Size(180, 22);
             this.menuMaterialManagement.Text = "Vật tư";
             this.menuMaterialManagement.Click += new System.EventHandler(this.menuMaterialManagement_Click);
             // 
             // menuUserManagement
             // 
             this.menuUserManagement.Name = "menuUserManagement";
-            this.menuUserManagement.Size = new System.Drawing.Size(359, 44);
-            this.menuUserManagement.Size = new System.Drawing.Size(224, 26);
+            this.menuUserManagement.Size = new System.Drawing.Size(180, 22);
             this.menuUserManagement.Text = "Người dùng";
+            this.menuUserManagement.Click += new System.EventHandler(this.menuUserManagement_Click);
             // 
             // menuOperation
             // 
             this.menuOperation.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuStockReceipt});
             this.menuOperation.Name = "menuOperation";
-            this.menuOperation.Size = new System.Drawing.Size(91, 24);
+            this.menuOperation.Size = new System.Drawing.Size(74, 22);
             this.menuOperation.Text = "Nghiệp vụ";
             // 
             // menuStockReceipt
             // 
             this.menuStockReceipt.Name = "menuStockReceipt";
-            this.menuStockReceipt.Size = new System.Drawing.Size(193, 26);
+            this.menuStockReceipt.Size = new System.Drawing.Size(157, 22);
             this.menuStockReceipt.Text = "Phiếu nhập kho";
             // 
             // menuReport
@@ -118,47 +118,46 @@
             this.menuStatisticsReport,
             this.menuPrintReceipt});
             this.menuReport.Name = "menuReport";
-            this.menuReport.Size = new System.Drawing.Size(77, 24);
+            this.menuReport.Size = new System.Drawing.Size(61, 22);
             this.menuReport.Text = "Báo cáo";
             // 
             // menuStatisticsReport
             // 
             this.menuStatisticsReport.Name = "menuStatisticsReport";
-            this.menuStatisticsReport.Size = new System.Drawing.Size(208, 26);
+            this.menuStatisticsReport.Size = new System.Drawing.Size(166, 22);
             this.menuStatisticsReport.Text = "Báo cáo thống kê";
             // 
             // menuPrintReceipt
             // 
             this.menuPrintReceipt.Name = "menuPrintReceipt";
-            this.menuPrintReceipt.Size = new System.Drawing.Size(208, 26);
+            this.menuPrintReceipt.Size = new System.Drawing.Size(166, 22);
             this.menuPrintReceipt.Text = "In hóa đơn ";
             // 
             // menuClose
             // 
             this.menuClose.Name = "menuClose";
-            this.menuClose.Size = new System.Drawing.Size(61, 24);
+            this.menuClose.Size = new System.Drawing.Size(50, 22);
             this.menuClose.Text = "Thoát";
             this.menuClose.Click += new System.EventHandler(this.menuClose_Click);
             // 
             // lblWelcome
             // 
             this.lblWelcome.AutoSize = true;
-            this.lblWelcome.Location = new System.Drawing.Point(755, 102);
-            this.lblWelcome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblWelcome.Location = new System.Drawing.Point(378, 53);
+            this.lblWelcome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(65, 16);
+            this.lblWelcome.Size = new System.Drawing.Size(52, 13);
             this.lblWelcome.TabIndex = 1;
             this.lblWelcome.Text = "Welcome";
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1600, 865);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "frmMain";
             this.Text = "frmMain";
             this.Load += new System.EventHandler(this.frmMain_Load);
