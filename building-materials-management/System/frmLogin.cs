@@ -44,7 +44,7 @@ namespace building_materials_management.Login
             {
                 var client = SupabaseService.Client;
 
-                var session = await client.Auth.SignIn("admin@test.com", "123456");
+                var session = await client.Auth.SignIn(email, password);
 
                 if (session != null && session.User != null)
                 {
@@ -60,7 +60,7 @@ namespace building_materials_management.Login
                         MessageBox.Show($"Đăng nhập thành công! Chào mừng {profile.HoTen}.");
 
                         this.Hide();
-                        frmMain formMain = new frmMain(); // (Đây là form Dashboard của bạn)
+                        frmMain formMain = new frmMain(); 
                         formMain.Show();
                     }
                     else

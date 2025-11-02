@@ -78,7 +78,7 @@
             // 
             this.cbbRole.FormattingEnabled = true;
             this.cbbRole.Location = new System.Drawing.Point(364, 64);
-            this.cbbRole.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbRole.Margin = new System.Windows.Forms.Padding(2);
             this.cbbRole.Name = "cbbRole";
             this.cbbRole.Size = new System.Drawing.Size(149, 21);
             this.cbbRole.TabIndex = 3;
@@ -86,7 +86,7 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(111, 31);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(149, 20);
             this.txtEmail.TabIndex = 4;
@@ -94,7 +94,7 @@
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(111, 64);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(149, 20);
             this.txtPassword.TabIndex = 5;
@@ -102,7 +102,7 @@
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(364, 31);
-            this.txtName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtName.Margin = new System.Windows.Forms.Padding(2);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(149, 20);
             this.txtName.TabIndex = 7;
@@ -121,12 +121,13 @@
             // 
             this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsers.Location = new System.Drawing.Point(34, 114);
-            this.dgvUsers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvUsers.Margin = new System.Windows.Forms.Padding(2);
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.RowHeadersWidth = 51;
             this.dgvUsers.RowTemplate.Height = 24;
             this.dgvUsers.Size = new System.Drawing.Size(479, 150);
             this.dgvUsers.TabIndex = 24;
+            this.dgvUsers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsers_CellClick);
             // 
             // btnAdd
             // 
@@ -136,6 +137,7 @@
             this.btnAdd.TabIndex = 32;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnEdit
             // 
@@ -145,6 +147,7 @@
             this.btnEdit.TabIndex = 33;
             this.btnEdit.Text = "Sửa";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnCancel
             // 
@@ -154,6 +157,7 @@
             this.btnCancel.TabIndex = 34;
             this.btnCancel.Text = "Hủy";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnClose
             // 
@@ -163,6 +167,7 @@
             this.btnClose.TabIndex = 35;
             this.btnClose.Text = "Thoát";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // frmUserManagement
             // 
@@ -182,7 +187,7 @@
             this.Controls.Add(this.lblRole);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblEmail);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmUserManagement";
             this.Text = "frmUserManagement";
             this.Load += new System.EventHandler(this.frmUserManagement_Load);
