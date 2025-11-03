@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace building_materials_management.Classes
 {
     [Table("chitietnhapkho")]
-    public class ChiTietNhapKho : BaseModel
+    public class ReceiptDetails : BaseModel
     {
         [PrimaryKey("id", true)]
         public long Id { get; set; }

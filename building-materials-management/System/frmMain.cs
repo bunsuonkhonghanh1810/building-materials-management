@@ -1,6 +1,7 @@
 ﻿using building_materials_management.Classes;
 using building_materials_management.MasterData;
 using building_materials_management.Operation;
+using building_materials_management.Report;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -98,6 +99,15 @@ namespace building_materials_management.Main
             frmStockReceipt formStockReceipt = new frmStockReceipt();
             formStockReceipt.ShowDialog();
 
+            this.Show();
+        }
+
+        private void menuPrintReceipt_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            frmPrintReceipt formPrintReceipt = new frmPrintReceipt();
+            formPrintReceipt.ShowDialog();
             this.Show();
         }
     }

@@ -73,28 +73,28 @@
             // menuSupplierManagement
             // 
             this.menuSupplierManagement.Name = "menuSupplierManagement";
-            this.menuSupplierManagement.Size = new System.Drawing.Size(180, 22);
+            this.menuSupplierManagement.Size = new System.Drawing.Size(162, 22);
             this.menuSupplierManagement.Text = "Nhà cung cấp";
             this.menuSupplierManagement.Click += new System.EventHandler(this.menuSupplierManagement_Click);
             // 
             // menuCategoryManagement
             // 
             this.menuCategoryManagement.Name = "menuCategoryManagement";
-            this.menuCategoryManagement.Size = new System.Drawing.Size(180, 22);
+            this.menuCategoryManagement.Size = new System.Drawing.Size(162, 22);
             this.menuCategoryManagement.Text = "Danh mục vật tư";
             this.menuCategoryManagement.Click += new System.EventHandler(this.menuCategoryManagement_Click);
             // 
             // menuMaterialManagement
             // 
             this.menuMaterialManagement.Name = "menuMaterialManagement";
-            this.menuMaterialManagement.Size = new System.Drawing.Size(180, 22);
+            this.menuMaterialManagement.Size = new System.Drawing.Size(162, 22);
             this.menuMaterialManagement.Text = "Vật tư";
             this.menuMaterialManagement.Click += new System.EventHandler(this.menuMaterialManagement_Click);
             // 
             // menuUserManagement
             // 
             this.menuUserManagement.Name = "menuUserManagement";
-            this.menuUserManagement.Size = new System.Drawing.Size(180, 22);
+            this.menuUserManagement.Size = new System.Drawing.Size(162, 22);
             this.menuUserManagement.Text = "Người dùng";
             this.menuUserManagement.Click += new System.EventHandler(this.menuUserManagement_Click);
             // 
@@ -109,7 +109,7 @@
             // menuStockReceipt
             // 
             this.menuStockReceipt.Name = "menuStockReceipt";
-            this.menuStockReceipt.Size = new System.Drawing.Size(180, 22);
+            this.menuStockReceipt.Size = new System.Drawing.Size(157, 22);
             this.menuStockReceipt.Text = "Phiếu nhập kho";
             this.menuStockReceipt.Click += new System.EventHandler(this.menuStockReceipt_Click);
             // 
@@ -125,14 +125,15 @@
             // menuStatisticsReport
             // 
             this.menuStatisticsReport.Name = "menuStatisticsReport";
-            this.menuStatisticsReport.Size = new System.Drawing.Size(166, 22);
+            this.menuStatisticsReport.Size = new System.Drawing.Size(180, 22);
             this.menuStatisticsReport.Text = "Báo cáo thống kê";
             // 
             // menuPrintReceipt
             // 
             this.menuPrintReceipt.Name = "menuPrintReceipt";
-            this.menuPrintReceipt.Size = new System.Drawing.Size(166, 22);
+            this.menuPrintReceipt.Size = new System.Drawing.Size(180, 22);
             this.menuPrintReceipt.Text = "In hóa đơn ";
+            this.menuPrintReceipt.Click += new System.EventHandler(this.menuPrintReceipt_Click);
             // 
             // menuClose
             // 

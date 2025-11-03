@@ -11,7 +11,7 @@ namespace building_materials_management.Classes
     [Table("phieunhapkho")]
     public class Receipt : BaseModel
     {
-        [PrimaryKey("id", true)]
+        [PrimaryKey("id", false)]
         public int Id { get; set; }
         [Column("ma_phieu")]
         public string MaPhieu { get; set; }

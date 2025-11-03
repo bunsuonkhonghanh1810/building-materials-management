@@ -254,6 +254,9 @@
     <EmbeddedResource Include="Operation\frmStockReceipt.resx">
       <DependentUpon>frmStockReceipt.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\frmPrintReceipt.resx">
+      <DependentUpon>frmPrintReceipt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="System\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>

@@ -14,7 +14,7 @@ namespace building_materials_management.Operation
 {
     public partial class frmStockReceipt : Form
     {
-        private List<ChiTietNhapKho> receiptDetails = new List<ChiTietNhapKho>();
+        private List<ReceiptDetails> receiptDetails = new List<ReceiptDetails>();
         private int? editingIndex = null; // null = adding new, otherwise index of editing item
         public frmStockReceipt()
         {
@@ -184,7 +184,7 @@ namespace building_materials_management.Operation
                         MessageBox.Show("Vật tư đã có trong danh sách.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
-                    var detail = new ChiTietNhapKho
+                    var detail = new ReceiptDetails
                     {
                         IdVatTu = selectedMaterial.Id,
                         SoLuong = quantity,
@@ -355,7 +355,7 @@ namespace building_materials_management.Operation
                 }
 
                 // Insert details in batch
-                await SupabaseService.Client.From<ChiTietNhapKho>().Insert(receiptDetails);
+                await SupabaseService.Client.From<ReceiptDetails>().Insert(receiptDetails);
 
                 // Update material stock for each detail
                 var materialList = GetMaterialListFromDataSource(cbbMaterialId.DataSource);
