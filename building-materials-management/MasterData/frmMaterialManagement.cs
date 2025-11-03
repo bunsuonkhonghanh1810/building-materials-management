@@ -23,6 +23,11 @@ namespace building_materials_management.MasterData
         public frmMaterialManagement()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.ControlBox = false;
+            this.CenterToScreen();
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
         }
 
         // ✅ Form Load
@@ -159,9 +164,22 @@ namespace building_materials_management.MasterData
                 txttonkho.Text = row.Cells["TonKho"].Value?.ToString();
                 cbbdonvitinh.Text = row.Cells["DonViTinh"].Value?.ToString();
                 cbbdanhmuc.Text = row.Cells["TenDanhMuc"].Value?.ToString();
+
+                // --- THAY ĐỔI Ở ĐÂY ---
+                // 1. Lấy URL từ DataGridView
                 fileAnh = row.Cells["LinkAnh"].Value?.ToString();
 
-                ShowImageFromLocal(fileAnh);
+                // 2. Hiển thị ảnh từ URL
+                if (!string.IsNullOrWhiteSpace(fileAnh))
+                {
+                    // Dùng LoadAsync để tải ảnh từ Internet mà không làm đơ UI
+                    picAnh.LoadAsync(fileAnh);
+                }
+                else
+                {
+                    picAnh.Image = null; // Xóa ảnh nếu không có link
+                }
+                // --- KẾT THÚC THAY ĐỔI ---
 
                 isRowSelected = true;
                 SetFormState(FormMode.View);
@@ -232,7 +250,7 @@ namespace building_materials_management.MasterData
         }
 
         // ✅ Chọn ảnh
-        private void btnAnh_Click(object sender, EventArgs e)
+        private async void btnAnh_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog dlg = new OpenFileDialog())
             {
@@ -241,61 +259,53 @@ namespace building_materials_management.MasterData
 
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {
-                    string src = dlg.FileName;
-                    string folder = Path.Combine(Application.StartupPath, "Images", "Vattu");
-                    Directory.CreateDirectory(folder);
+                    string localFilePath = dlg.FileName;
 
-                    string dest = Path.Combine(folder, Path.GetFileNameWithoutExtension(src) + ".png");
                     try
                     {
-                        using (var img = new MagickImage(src))
-                        {
-                            img.Format = MagickFormat.Png;
-                            img.Write(dest);
-                        }
+                        picAnh.Image = Image.FromFile(localFilePath);
 
-                        fileAnh = Path.Combine("Images", "Vattu", Path.GetFileName(dest)).Replace("\\", "/");
-                        ShowImageFromLocal(fileAnh);
+                        this.Cursor = Cursors.WaitCursor;
+                        btnAnh.Enabled = false;
+                        btnAnh.Text = "Đang tải lên...";
+
+                        byte[] fileBytes = File.ReadAllBytes(localFilePath);
+
+                        string bucketName = "vat-tu"; 
+                        string fileNameInBucket = $"{Guid.NewGuid()}{Path.GetExtension(localFilePath)}";
+                        string supabasePath = $"public/{fileNameInBucket}";
+
+                        var client = SupabaseService.Client;
+                        await client.Storage
+                                    .From(bucketName)
+                                    .Upload(fileBytes, supabasePath, new Supabase.Storage.FileOptions { Upsert = true });
+
+                        string publicUrl = client.Storage
+                                                 .From(bucketName)
+                                                 .GetPublicUrl(supabasePath);
+
+                        fileAnh = publicUrl;
+
+                        picAnh.LoadAsync(fileAnh);
+
+                        MessageBox.Show("Tải ảnh lên thành công!");
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Không thể lưu ảnh: " + ex.Message);
+                        MessageBox.Show("Không thể upload ảnh: " + ex.Message);
+                        fileAnh = "";
+                        picAnh.Image = null;
+                    }
+                    finally
+                    {
+                        this.Cursor = Cursors.Default;
+                        btnAnh.Enabled = true;
+                        btnAnh.Text = "Chọn ảnh";
                     }
                 }
             }
         }
 
-        // ✅ Hiển thị ảnh từ local
-        private void ShowImageFromLocal(string relativePath)
-        {
-            try
-            {
-                if (string.IsNullOrWhiteSpace(relativePath))
-                {
-                    picAnh.Image = null;
-                    return;
-                }
-
-                string full = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath);
-                if (!File.Exists(full))
-                {
-                    picAnh.Image = null;
-                    return;
-                }
-
-                using (var fs = new FileStream(full, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
-                using (var img = Image.FromStream(fs))
-                {
-                    picAnh.Image = new Bitmap(img);
-                }
-            }
-            catch
-            {
-                picAnh.Image = null;
-            }
-        }
-
-        // ✅ Lưu dữ liệu
         private async void btnLuu_Click(object sender, EventArgs e)
         {
             try

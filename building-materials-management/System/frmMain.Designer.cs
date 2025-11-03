@@ -28,6 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuMasterData = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSupplierManagement = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,7 +47,11 @@
             this.menuPrintReceipt = new System.Windows.Forms.ToolStripMenuItem();
             this.menuClose = new System.Windows.Forms.ToolStripMenuItem();
             this.lblWelcome = new System.Windows.Forms.Label();
+            this.chartColumn = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartPie = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartColumn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartPie)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -125,13 +135,13 @@
             // menuStatisticsReport
             // 
             this.menuStatisticsReport.Name = "menuStatisticsReport";
-            this.menuStatisticsReport.Size = new System.Drawing.Size(180, 22);
+            this.menuStatisticsReport.Size = new System.Drawing.Size(166, 22);
             this.menuStatisticsReport.Text = "Báo cáo thống kê";
             // 
             // menuPrintReceipt
             // 
             this.menuPrintReceipt.Name = "menuPrintReceipt";
-            this.menuPrintReceipt.Size = new System.Drawing.Size(180, 22);
+            this.menuPrintReceipt.Size = new System.Drawing.Size(166, 22);
             this.menuPrintReceipt.Text = "In hóa đơn ";
             this.menuPrintReceipt.Click += new System.EventHandler(this.menuPrintReceipt_Click);
             // 
@@ -145,18 +155,52 @@
             // lblWelcome
             // 
             this.lblWelcome.AutoSize = true;
-            this.lblWelcome.Location = new System.Drawing.Point(378, 53);
+            this.lblWelcome.Location = new System.Drawing.Point(594, 34);
             this.lblWelcome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(52, 13);
             this.lblWelcome.TabIndex = 1;
             this.lblWelcome.Text = "Welcome";
             // 
+            // chartColumn
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chartColumn.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartColumn.Legends.Add(legend1);
+            this.chartColumn.Location = new System.Drawing.Point(12, 99);
+            this.chartColumn.Name = "chartColumn";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartColumn.Series.Add(series1);
+            this.chartColumn.Size = new System.Drawing.Size(377, 339);
+            this.chartColumn.TabIndex = 2;
+            this.chartColumn.Text = "chart1";
+            // 
+            // chartPie
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.chartPie.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartPie.Legends.Add(legend2);
+            this.chartPie.Location = new System.Drawing.Point(411, 99);
+            this.chartPie.Name = "chartPie";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartPie.Series.Add(series2);
+            this.chartPie.Size = new System.Drawing.Size(377, 339);
+            this.chartPie.TabIndex = 3;
+            this.chartPie.Text = "chart2";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.chartPie);
+            this.Controls.Add(this.chartColumn);
             this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -165,6 +209,8 @@
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartColumn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartPie)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,5 +231,7 @@
         private System.Windows.Forms.ToolStripMenuItem menuPrintReceipt;
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.ToolStripMenuItem menuClose;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartColumn;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartPie;
     }
 }

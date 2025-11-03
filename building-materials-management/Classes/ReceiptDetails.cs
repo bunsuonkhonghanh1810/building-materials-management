@@ -1,4 +1,5 @@
-﻿using Supabase.Postgrest.Attributes;
+﻿using Newtonsoft.Json;
+using Supabase.Postgrest.Attributes;
 using Supabase.Postgrest.Models;
 using System;
 using System.Collections.Generic;
@@ -25,5 +26,7 @@ namespace building_materials_management.Classes
         public decimal? ThanhTien { get; set; }
         [Column("is_deleted")]
         public bool IsDeleted { get; set; } = false;
+        [JsonProperty("vattu")]
+        public Material VatTu { get; set; } 
     }
 }

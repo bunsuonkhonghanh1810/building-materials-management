@@ -1,4 +1,5 @@
-﻿using Supabase.Postgrest.Attributes;
+﻿using Newtonsoft.Json;
+using Supabase.Postgrest.Attributes;
 using Supabase.Postgrest.Models;
 using System;
 using System.Collections.Generic;
@@ -31,5 +32,7 @@ namespace building_materials_management.Classes
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         [Column("is_deleted")]
         public bool IsDeleted { get; set; } = false;
+        [JsonProperty("nhacungcap")]
+        public Supplier NhaCungCap { get; set; }
     }
 }
