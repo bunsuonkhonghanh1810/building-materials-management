@@ -56,6 +56,7 @@ namespace building_materials_management.Login
                     {
                         GlobalState.CurrentUserRole = profile.Role;
                         GlobalState.CurrentUserName = profile.HoTen;
+                        GlobalState.CurrentUserId = profile.Id;
 
                         MessageBox.Show($"Đăng nhập thành công! Chào mừng {profile.HoTen}.");
 

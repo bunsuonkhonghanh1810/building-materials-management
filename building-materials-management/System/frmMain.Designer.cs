@@ -109,8 +109,9 @@
             // menuStockReceipt
             // 
             this.menuStockReceipt.Name = "menuStockReceipt";
-            this.menuStockReceipt.Size = new System.Drawing.Size(157, 22);
+            this.menuStockReceipt.Size = new System.Drawing.Size(180, 22);
             this.menuStockReceipt.Text = "Phiếu nhập kho";
+            this.menuStockReceipt.Click += new System.EventHandler(this.menuStockReceipt_Click);
             // 
             // menuReport
             // 

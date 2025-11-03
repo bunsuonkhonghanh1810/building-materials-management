@@ -200,7 +200,7 @@ namespace building_materials_management.MasterData
                 txtName.Enabled = false;
                 txtPassword.Enabled = false;
                 cbbRole.Enabled = false;
-                btnAdd.Enabled = true;
+                btnAdd.Enabled = false;
                 btnEdit.Enabled = true;
                 btnCancel.Enabled = false;
                 btnAdd.Text = "Thêm";
@@ -242,8 +242,10 @@ namespace building_materials_management.MasterData
                     string hoTen = txtName.Text;
                     string role = cbbRole.SelectedItem.ToString();
 
+                    Guid userId = Guid.Parse(selectedUserId);
+
                     await client.From<User>()
-                        .Where(u => u.Id == Guid.Parse(selectedUserId))
+                        .Where(u => u.Id == userId)
                         .Set(u => u.HoTen, hoTen)
                         .Set(u => u.Role, role)
                         .Update();

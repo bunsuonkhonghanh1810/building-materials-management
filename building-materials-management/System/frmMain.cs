@@ -1,5 +1,6 @@
 ﻿using building_materials_management.Classes;
 using building_materials_management.MasterData;
+using building_materials_management.Operation;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace building_materials_management.Main
+ 
 {
     public partial class frmMain : Form
     {
@@ -85,6 +87,16 @@ namespace building_materials_management.Main
 
             frmUserManagement formUserManagement = new frmUserManagement();
             formUserManagement.ShowDialog();
+            
+            this.Show();
+        }
+
+        private void menuStockReceipt_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            frmStockReceipt formStockReceipt = new frmStockReceipt();
+            formStockReceipt.ShowDialog();
 
             this.Show();
         }
